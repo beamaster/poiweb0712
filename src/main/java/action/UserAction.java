@@ -166,13 +166,13 @@ public class UserAction extends ActionSupport{
                 }
 
                 User user=new User();
-                user.setName(ExcelUtil.formatCell(hssfRow.getCell(0)));
-                user.setPhone(ExcelUtil.formatCell(hssfRow.getCell(1)));
-                user.setEmail(ExcelUtil.formatCell(hssfRow.getCell(2)));
-                user.setQq(ExcelUtil.formatCell(hssfRow.getCell(3)));
+                user.setName(ExcelUtil.formatCell(hssfRow.getCell(1)));
+                user.setPhone(ExcelUtil.formatCell(hssfRow.getCell(2)));
+                user.setEmail(ExcelUtil.formatCell(hssfRow.getCell(3)));
+                user.setQq(ExcelUtil.formatCell(hssfRow.getCell(4)));
 
                 //对于单元格日期需要进行特殊处理
-                user.setBirth(DateUtil.formatString(ExcelUtil.formatCell2(hssfRow.getCell(4)), "yyyy-MM-dd"));
+                user.setBirth(DateUtil.formatString(ExcelUtil.formatCell2(hssfRow.getCell(5)), "yyyy-MM-dd"));
                 Connection con=null;
                 try{
                     con=dbUtil.getCon();
